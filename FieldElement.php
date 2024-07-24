@@ -44,14 +44,14 @@ final class FieldElement {
 			}
 		
 			// Set limbs from value
-			$this->limbs[0] |= (ord($value[28]) << 24) | (ord($value[29]) << 16) | (ord($value[30]) << 8) | ord($value[31]);
-			$this->limbs[1] |= (ord($value[24]) << 24) | (ord($value[25]) << 16) | (ord($value[26]) << 8) | ord($value[27]);
-			$this->limbs[2] |= (ord($value[20]) << 24) | (ord($value[21]) << 16) | (ord($value[22]) << 8) | ord($value[23]);
-			$this->limbs[3] |= (ord($value[16]) << 24) | (ord($value[17]) << 16) | (ord($value[18]) << 8) | ord($value[19]);
-			$this->limbs[4] |= (ord($value[12]) << 24) | (ord($value[13]) << 16) | (ord($value[14]) << 8) | ord($value[15]);
-			$this->limbs[5] |= (ord($value[8]) << 24) | (ord($value[9]) << 16) | (ord($value[10]) << 8) | ord($value[11]);
-			$this->limbs[6] |= (ord($value[4]) << 24) | (ord($value[5]) << 16) | (ord($value[6]) << 8) | ord($value[7]);
-			$this->limbs[7] |= (ord($value[0]) << 24) | (ord($value[1]) << 16) | (ord($value[2]) << 8) | ord($value[3]);
+			$this->limbs[0] = (ord($value[28]) << 24) | (ord($value[29]) << 16) | (ord($value[30]) << 8) | ord($value[31]);
+			$this->limbs[1] = (ord($value[24]) << 24) | (ord($value[25]) << 16) | (ord($value[26]) << 8) | ord($value[27]);
+			$this->limbs[2] = (ord($value[20]) << 24) | (ord($value[21]) << 16) | (ord($value[22]) << 8) | ord($value[23]);
+			$this->limbs[3] = (ord($value[16]) << 24) | (ord($value[17]) << 16) | (ord($value[18]) << 8) | ord($value[19]);
+			$this->limbs[4] = (ord($value[12]) << 24) | (ord($value[13]) << 16) | (ord($value[14]) << 8) | ord($value[15]);
+			$this->limbs[5] = (ord($value[8]) << 24) | (ord($value[9]) << 16) | (ord($value[10]) << 8) | ord($value[11]);
+			$this->limbs[6] = (ord($value[4]) << 24) | (ord($value[5]) << 16) | (ord($value[6]) << 8) | ord($value[7]);
+			$this->limbs[7] = (ord($value[0]) << 24) | (ord($value[1]) << 16) | (ord($value[2]) << 8) | ord($value[3]);
 			
 			// Check if limbs is greater than or equal to the prime
 			if(((int)($this->limbs[0] < 0xFFFFFC2F) | (($this->limbs[1] ^ 0xFFFFFFFE) & 0xFFFFFFFE) | ($this->limbs[2] ^ 0xFFFFFFFF) | ($this->limbs[3] ^ 0xFFFFFFFF) | ($this->limbs[4] ^ 0xFFFFFFFF) | ($this->limbs[5] ^ 0xFFFFFFFF) | ($this->limbs[6] ^ 0xFFFFFFFF) | ($this->limbs[7] ^ 0xFFFFFFFF)) === 0) {
