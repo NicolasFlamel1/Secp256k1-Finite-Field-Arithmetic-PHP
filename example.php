@@ -4,6 +4,7 @@
 // Enforce strict types
 declare(strict_types=1);
 
+
 // Include dependencies
 require_once __DIR__ . "/FieldElement.php";
 
